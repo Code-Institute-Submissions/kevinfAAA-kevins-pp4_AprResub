@@ -33,6 +33,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["kevinspp4.herokuapp.com", "localhost"]
 
+CSRF_TRUSTED_ORIGINS = ['https://8000-emerald-cattle-bamrn4ls.ws-eu21.gitpod.io']
+
 
 # Application definition
 
@@ -45,6 +47,7 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
+    'django_summernote',
     'restaurant',
 ]
 

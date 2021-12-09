@@ -1,11 +1,16 @@
+
 * {
     margin: 0px;
     padding: 0px;
     font-family: 'Nunito', 'sans-serif';
 }
 
+/*navabr*/
+
 .menu-bar {
-    background-image: linear-gradient(-90deg, #d38312, #a83279); 
+    background: #16222A;
+    background: -webkit-linear-gradient(59deg, #3A6073, #16222A);
+    background: linear-gradient(59deg, #3A6073, #16222A);
 }
 
 .nav-link {
@@ -36,8 +41,9 @@
     border-bottom: 1px solid #fff;
 }
 
-.navbar-brand img {
-    width: 150px;
+.navbar-brand {
+    font-weight: 900;
+    color: #fff!important; 
     margin-top: 5px;
     margin-left: 20px;
 }
@@ -48,11 +54,26 @@
     }
 }
 
-html, body {
-    min-height: 100%;
+/*landing page*/
+
+.alert-container {}
+
+.callout-container {
+    height: 100vh;
+
+    background: url('../images/restaurant.jpeg') no-repeat center center fixed;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 }
 
-body, div, form, input, select, textarea, p { 
+/*Reservations Form*/
+
+form.div, form, input, select, textarea, p { 
     padding: 0;
     margin: 0;
     outline: none;
@@ -186,13 +207,126 @@ button:hover {
     background: #6eb8dd;
 }
 
-@media (min-width: 568px) {
-    .name-item, .city-item {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+@media (max-width: 580px) {
+    form {
+        width: 100%;
+    }
 }
 
 button:hover {
     border: 2px solid black;
 }
+
+/*Footer*/
+
+footer {
+    background: #16222A;
+    background: -webkit-linear-gradient(59deg, #3A6073, #16222A);
+    background: linear-gradient(59deg, #3A6073, #16222A);
+    color: white;
+    margin-top:100px;
+  }
+  
+  footer a {
+    color: #fff;
+    font-size: 14px;
+    transition-duration: 0.2s;
+  }
+  
+  footer a:hover {
+    color: #FA944B;
+    text-decoration: none;
+  }
+  
+  .copy {
+    font-size: 12px;
+    padding: 10px;
+    border-top: 1px solid #FFFFFF;
+  }
+  
+  .footer-middle {
+    padding-top: 2em;
+    color: white;
+  }
+  
+  
+  
+  /* footer social icons */
+  
+  ul.social-network {
+    list-style: none;
+    display: inline;
+    margin-left: 0 !important;
+    padding: 0;
+  }
+  
+  ul.social-network li {
+    display: inline;
+    margin: 0 5px;
+  }
+  
+  
+  /* footer social icons */
+  
+  .social-network a.icoFacebook:hover {
+    background-color: #3B5998;
+  }
+  
+  .social-network a.icoInstagram:hover {
+    background-color: #007bb7;
+  }
+  
+  .social-network a.icoFacebook:hover i,
+  .social-network a.icoInstagram:hover i {
+    color: #fff;
+  }
+  
+  .social-network a.socialIcon:hover,
+  .socialHoverClass {
+    color: #44BCDD;
+  }
+  
+  .social-circle li a {
+    display: inline-block;
+    position: relative;
+    margin: 0 auto 0 auto;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    font-size: 15px;
+  }
+  
+  .social-circle li i {
+    margin: 0;
+    line-height: 30px;
+    text-align: center;
+  }
+  
+  .social-circle li a:hover i,
+  .triggeredHover {
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -ms--transform: rotate(360deg);
+    transform: rotate(360deg);
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    transition: all 0.2s;
+  }
+  
+  .social-circle i {
+    color: #595959;
+    -webkit-transition: all 0.8s;
+    -moz-transition: all 0.8s;
+    -o-transition: all 0.8s;
+    -ms-transition: all 0.8s;
+    transition: all 0.8s;
+  }
+  
+  .social-network a {
+    background-color: #F9F9F9;
+  }

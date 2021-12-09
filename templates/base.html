@@ -16,7 +16,7 @@
     <div class="header">
         <div class="menu-bar">
             <nav class="navbar navbar-expand-lg navbar-light">
-                <a class="navbar-brand" href="#"><img src="static/images/logo.jpg"></a>
+                <a class="navbar-brand" href="{% url 'home' %}">Kevs Place</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                   <i class="fa fa-bars"></i>
                 </button>
@@ -47,8 +47,67 @@
         {% endblock content %}
     </main>
 
+     <!-- Site footer -->
+     <footer class="mainfooter" role="contentinfo">
+      <div class="footer-middle">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-6">
+            <!--Column1-->
+            <div class="footer-pad">
+              <h4>Location:</h4>
+              <ul class="list-unstyled">
+                <li>Kevs Place</li>
+                <li>Merrion Square West</li>
+                <li>Dublin 2</li>
+                <li>D02 K303</li>
+                <li><a href="https://www.google.ie/maps/place/Dublin,+D02+K303/@53.3414179,-6.2543296,17.6z/data=!4m5!3m4!1s0x48670e90ae6b6a7d:0x83dec26aaf2acc2b!8m2!3d53.3408889!4d-6.2524652" target="_blank"><u>Show on Google Maps</u></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <!--Column1-->
+            <div class="footer-pad">
+              <h4>For Reservations:</h4>
+              <ul class="list-unstyled">
+                <li><a href="#">Book online</a></li>
+                <li><u>Email:</u> book@kevsplace.com</li>
+                <li><u>Call:</u> 01 665 895 478</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <!--Column1-->
+            <div class="footer-pad">
+              <h4>Opening Times:</h4>
+              <ul class="list-unstyled">
+                <li>Mon - Weds 5:30pm - 9:30pm</li>
+                <li>Thurs - Sat 5:30pm -11:30pm</li>
+                <li>Sun 5:30pm - 10:30pm</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <h4>Follow Us</h4>
+                <ul class="social-network social-circle">
+                 <li><a href="https://www.facebook.com/" class="icoFacebook" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                 <li><a href="https://www.instagram.com/" class="icoInstagram" title="Instagram" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                </ul>				
+        </div>
+        </div>
+      <div class="row">
+        <div class="col-md-12 copy">
+          <p class="text-center">Copyright 2021 - Kevs Place.  All rights reserved.</p>
+        </div>
+      </div>
+    
+    
+      </div>
+      </div>
+    </footer>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-</body>
+    <script src="https://kit.fontawesome.com/5523441889.js" crossorigin="anonymous"></script>
+  </body>
 </html>

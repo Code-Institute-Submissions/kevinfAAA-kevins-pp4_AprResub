@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "Signup" %}{% endblock %}
+
+{% block content %}
+<div class="testbox">
+  <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+    <div class="banner">
+      <h1>{% trans "Register" %}</h1>
+    </div>
+    <div>
+      <p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
+    </div>
+    <div class="item">
+    {% csrf_token %}
+    {{ form.as_p }}
+    {% if redirect_field_value %}
+    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+    {% endif %}
+    <button type="submit">{% trans "Sign Up" %} &raquo;</button>
+    </div>
+  </form>
+</div>
+
+{% endblock %}

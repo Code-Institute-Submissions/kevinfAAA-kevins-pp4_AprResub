@@ -4,23 +4,36 @@
 
 {% if user.is_authenticated %}
 <div id="reservations" class="testbox">
-    <form method="POST" action="{% url 'reservations' %}">
+  {% if submitted %}
+      You have a table reserved at Kevs Place!!!
+
+  {% else %}
+      <form action="" method="POST">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <input type="submit" value="Submit" class="btn btn-secondary">
+
+      </form>
+  
+    <!-- <form method="POST" action="{% url 'reservations' %}">
       {% csrf_token %}
       <div class="banner">
         <h1>Restaurant Reservation</h1>
       </div>
       <div class="item">
         <p>Number of Guests</p>
-        <input type="text" name="language"/>
+        <input type="text" name="number_of_guests"/>
       </div>
       <div class="item">
         <p>Reservation Date</p>
-        <input type="date" name="bdate" required/>
+        <input type="date" name="date" required/>
         <i class="fas fa-calendar-alt"></i>
       </div>
       <div class="item">
         <p>Reservation Time</p>
-        <input type="time" name="btime" required/>
+        <input type="time" name="time" required/>
              </div>
        <div class="item">
         <p>Additional notes</p>
@@ -29,7 +42,8 @@
        <div class="btn-block">
         <button type="submit" href="/">Reserve</button>
       </div>
-    </form>
+    </form> -->
+    {% endif %}
   </div>
   {% endif %}
 

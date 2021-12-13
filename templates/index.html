@@ -9,34 +9,4 @@
   </div>
 </div>
 
-{% if user.is_authenticated %}
-<div class="testbox">
-    <form action="/">
-      <div class="banner">
-        <h1>Restaurant Reservation</h1>
-      </div>
-      <div class="item">
-        <p>Number of Guests</p>
-        <input type="text" name="language"/>
-      </div>
-      <div class="item">
-        <p>Reservation Date</p>
-        <input type="date" name="bdate" required/>
-        <i class="fas fa-calendar-alt"></i>
-      </div>
-      <div class="item">
-        <p>Reservation Time</p>
-        <input type="time" name="btime" required/>
-             </div>
-       <div class="item">
-        <p>Additional notes</p>
-        <textarea rows="3"></textarea>
-      </div>
-       <div class="btn-block">
-        <button type="submit" href="/">Reserve</button>
-      </div>
-    </form>
-  </div>
-  {% endif %}
-
 {% endblock content %}

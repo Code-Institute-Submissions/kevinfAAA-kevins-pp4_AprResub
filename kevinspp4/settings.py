@@ -57,7 +57,7 @@ INSTALLED_APPS = [
 
 SITE_ID = 1
 
-LOGIN_REDIRECT_URL = '/#reservations'
+LOGIN_REDIRECT_URL = '/reservations/'
 LOGOUT_REDIRECT_URL = '/'
 
 
@@ -104,6 +104,17 @@ WSGI_APPLICATION = 'kevinspp4.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+}
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd7d9cqjrjsc68j',
+        'USER': 'cczidihoqzsbes',
+        'PASSWORD': '62013b245cd4da7d5ac666bc262e8b4c1075025c9f911f287443dbd7e09fe63e',
+        'HOST': 'ec2-63-32-7-190.eu-west-1.compute.amazonaws.com',
+        'PORT': '5432',
+    }
 }
 
 # Password validation
@@ -153,3 +164,11 @@ DEFAULT_FILE_STORAGE ='cloudinary_storage.storage.MediaCloudinaryStorage'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+ACCOUNT_EMAIL_REQUIRED=True
+
+ACCOUNT_AUTHENTICATION_METHOD = "email"
+
+ACCOUNT_EMAIL_VERIFICATION = "none"
+
+ACCOUNT_USERNAME_REQUIRED = False

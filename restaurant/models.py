@@ -3,11 +3,11 @@ from django.contrib.auth.models import User
 
 
 
+
 STATUS = ((0, "Draft"), (1, "Published"))
 
 class Reservations(models.Model):
-    title = models.CharField(max_length=200, unique=True)
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE, related_name="user", default=1)
+    title = models.CharField(max_length=200, unique=True, default="")
     number_of_guests = models.IntegerField(default=1)
     date = models.DateField()
     time = models.TimeField()

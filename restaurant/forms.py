@@ -6,4 +6,4 @@ from .models import Reservations
 class ReservationsForm(ModelForm):
     class Meta:
         model = Reservations
-        fields = ('title', 'user_id', 'number_of_guests', 'date', 'time', 'comments')
+        fields = ('title', 'number_of_guests', 'date', 'time', 'comments')

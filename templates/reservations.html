@@ -3,20 +3,21 @@
 {% block content %}
 
 {% if user.is_authenticated %}
-<div id="reservations" class="testbox">
-  {% if submitted %}
-      You have a table reserved at Kevs Place!!!
+  <div id="reservations" class="testbox">
+    {% if submitted %}
+      You have a table reserved 
+      at Kevs Place!!!
 
-  {% else %}
-      <form action="" method="POST">
-        {% csrf_token %}
+    {% else %}
+        <form action="" method="POST">
+          {% csrf_token %}
 
-        {{ form.as_p }}
+          {{ form.as_p }}
 
-        <input type="submit" value="Submit" class="btn btn-secondary">
+          <input type="submit" value="Submit" class="btn btn-secondary">
 
-      </form>
-  
+        </form>
+    {% endif %}
     <!-- <form method="POST" action="{% url 'reservations' %}">
       {% csrf_token %}
       <div class="banner">
@@ -43,8 +44,7 @@
         <button type="submit" href="/">Reserve</button>
       </div>
     </form> -->
-    {% endif %}
-  </div>
+    </div>
   {% endif %}
 
 {% endblock content %}

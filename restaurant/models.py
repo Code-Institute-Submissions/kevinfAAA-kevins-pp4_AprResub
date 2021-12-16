@@ -7,6 +7,7 @@ from django.contrib.auth.models import User
 STATUS = ((0, "Draft"), (1, "Published"))
 
 class Reservations(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
     title = models.CharField(max_length=200, unique=True, default="")
     number_of_guests = models.IntegerField(default=1)
     date = models.DateField()

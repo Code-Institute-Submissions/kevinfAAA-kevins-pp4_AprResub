@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="reservations" class="testbox">
+    <form action="" method="POST">
+        {% csrf_token %}
+        <a href="{% url 'bookings' %}">Go Back</a>
+        <p>Are you sure you want to cancel this reservation? {{booking}}</p>
+        <input type="Submit" value="Cancel Booking"/>
+    </form>
+</div>
+{% endblock content %}

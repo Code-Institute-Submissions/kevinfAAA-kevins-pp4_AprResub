@@ -6,7 +6,6 @@ from .views import BookingsList, BookingsDetail, BookingsCreate, BookingsUpdate,
 urlpatterns = [  
     path('', views.index, name='home'),
     path('menu/', views.menu, name='menu'),
-    path('reservations/', views.reservations, name='reservations'),
     path('bookings/', BookingsList.as_view(), name='bookings'),
     path('reserved/', views.reserved, name='revserved'),
     path('bookings/<int:pk>/', BookingsDetail.as_view(), name='bookings'),

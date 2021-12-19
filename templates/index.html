@@ -3,10 +3,19 @@
 {% block content %}
 <div class="container-fluid callout-container">
   <div class="opaque-overlay">&nbsp;</div>
-  <div class="row">
-      <div class="col-12">
+  <form class="landing">
+    {% csrf_token %}
+      <div>
+        <h2>Kevs Place</h2>
+        <h2>Fine Dining Bistro</h2>
+        <h3>Voted No1 Bistro experience 2020</h3>
+        {% if user.is_authenticated %}
+        <a type="button" class="btn btn-success" href="{% url 'create' %}">Reserve a Table</a>
+        {% else %}  
+        <a type="button" class="btn btn-success" href="{% url 'account_login' %}">Login/Register</a>
+        {% endif %}
       </div>
-  </div>
+    </form>
 </div>
 
 {% endblock content %}

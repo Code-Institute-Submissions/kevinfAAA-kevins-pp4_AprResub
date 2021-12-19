@@ -2,28 +2,34 @@
 
 {% block content %}
 {% if request.user.is_authenticated %}
-<p>{{request.user}}</p>
-<h5>My Booking</h5>
-<a href="{% url 'create' %}">Add Booking</a>
-
-
-<table>
-    <tr>
-        <th>Bookings</th>
-        <th></th>
-        <th></th>
-    </tr>
-    {% for reservations in bookings %}
-    <tr>
-        <td>{{reservations.title}}</td>
-        <td><a href="{% url 'bookings' reservations.id %}">View</a></td>
-        <td><a href="{% url 'update' reservations.id %}">Edit</a></td>
-        <td><a href="{% url 'delete' reservations.id %}">Delete</a></td>
-    </tr>
-    {% empty %}
-    <h3>No Reservations Made</h3>
-    {% endfor %}
-</table>
+<div class="testbox">
+    <form class="login" method="POST" action="{% url 'account_login' %}">
+        <div class= "banner">
+        <h1>{{request.user}}</h1>
+        </div>
+        <div class="bookings">
+        <table>
+            <tr>
+                <th>Bookings</th>
+                <th></th>
+                <th></th>
+            </tr>
+            {% for reservations in bookings %}
+            <tr>
+                <td>{{reservations.title}}</td>
+                <td><a type="button" class="btn btn-success" href="{% url 'update' reservations.id %}">Edit</a></td>
+                <td><a type="button" class="btn btn-danger" href="{% url 'delete' reservations.id %}">Delete</a></td>
+            </tr>
+            {% empty %}
+        <h3>No Reservations Made</h3>
+            {% endfor %}
+        </table>
+        <div>
+            <a type="button" class="btn btn-primary" href="{% url 'create' %}">Create a new Booking</a>
+        </div>
+        </div>
+    </form>
+</div>
 {% endif %}
 
 

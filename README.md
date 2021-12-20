@@ -8,12 +8,12 @@ It showcases my ability to use the Python Django Framework.
 
 A live program can be found [here](https://kevinspp4.herokuapp.com/).
 
-![Indeed Web Scraping Program](static/images/AmIResponsive.JPG)
+![Kevs Place](static/images/AmIResponsive.JPG)
 
 # Table of Contents
 - [1. Introduction](#introduction)
 - [2. How to use](#How-to-use)
-- [3. Data Model and Technologies](#Data-Model-and-Technologies)
+- [3. Frameworks and Technologies](#Frameworks-and-Technologies)
 - [4. Testing](#testing)
 - [5. Bugs](#bugs)
 - [6. Future Updates](#future-updates)
@@ -189,12 +189,175 @@ The create a new booking function allows the user to create a new booking by dir
 
 The logout page allows the user to logout. 
 
-# 3. Data Model and Technologies
+# 3. Frameworks and Technologies
 [Go to the top](#table-of-contents)
 
+## Django
 
+![Django Framework Diagram](static/images/Image11.jpg)
 
+This web application was created using the Django Framework.
+<br>
+Django is a Python-based free and open-source web application framework for the backend development of web applications and websites.
+<br>
+It follows the Model View Template (MVT) architectural pattern. It separates the code into three distinct parts – Model, View and Templates. The developers just have to code what should be displayed to the user and Django will take care of all the background details.
+<br>
+Maintained by the Django Software Foundation, the primary goal of Django is to ease the creation of complex, database-driven websites. 
+<br>
+The Python web framework Django emphasizes the following core areas:
 
+- Reusability 
+- Pluggability of components
+- Less code
+- Low coupling
+- Rapid development
 
+## Django Allauth
+
+Django Allauth is an integrated set of Django applications addressing authentication, registration, account management as well as 3rd party (social) account authentication.
+<br>
+
+- It supports multiple authentication schemes (e.g. login by user name, or by e-mail), as well as multiple strategies for account verification (ranging from none to e-mail verification).
+- All access tokens are consistently stored so that you can publish wall updates etc.
+
+# 4. Testing
+[Go to the top](#table-of-contents)
+
+## Google Develop Tools
+Google Developer Tools is used test bug fixes on the fly.
+<br>
+Google Developer Tools was really important when making the website responsive. 
+
+##	The W3C Markup validation Service
+
+I used [W3C Markup Validator](https://validator.w3.org/#validate_by_input+with_options) to check for any errors within my HTML pages.
+
+##	The W3C CSS validation Service
+
+I used [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) to check for any errors within my CSS page.
+
+## PEP8 Validation Testing 
+
+I used the [PEP8 online](http://pep8online.com/) validator to check my python code for errors.
+
+![Kevs Place](static/images/AmIResponsive.JPG)
+
+I used [Am I Responsive](http://ami.responsivedesign.is/) to view how my website is displayed on different media viewports. The results suggust that the webisite is responsive for the follwoing devices:
+- Widescreen desktop.
+- Laptop.
+- Ipad.
+- Mobile Phone (iPhone X).
+
+##	Manual Testing
+
+### Landing Page
+#### Navigation Bar
+##### Kevs Place
+- When “Kevs Place” is left clicked with the mouse, the browser sends the user to the Landing page. It worked as expected.
+##### Home
+- When “Home” is left clicked with the mouse, the browser sends the user to the Landing page. It worked as expected.
+##### Menu
+- When “Menu” is left clicked with the mouse, the browser sends the user to the "Menu" webpage. It worked as expected.
+##### Login
+- When “Login” is left clicked with the mouse, the browser sends the user to the "Login" webpage. It worked as expected.
+##### Reservations
+- When “Reservations” is left clicked with the mouse, the browser sends the user to the "Reservations" webpage. It worked as expected.
+##### My Bookings
+- When “My Bookings” is left clicked with the mouse, the browser sends the user to the "My Bookings" webpage. It worked as expected.
+##### Register
+- When “Register” is left clicked with the mouse, the browser sends the user to the "Register" webpage. It worked as expected.
+##### Logout
+- When “Logout” is left clicked with the mouse, the browser sends the user to the "Logout" webpage. It worked as expected.
+
+#### Landing image link
+##### Login/Register
+- When “Login/Register” is left clicked with the mouse, the browser sends the user to the "Login/Register" webpage. It worked as expected.
+##### Reserve a Table
+- When “Reserve a Table” is left clicked with the mouse, the browser sends the user to the "Login/Register" webpage. It worked as expected.
+
+#### Footer
+##### Show on Google Maps
+- When “Show on Google Maps” is left clicked with the mouse, the browser sends the user to the "Google Maps" webpage. It worked as expected.
+##### Facebook Icon
+- When “Facebook Icon” is left clicked with the mouse, the browser sends the user to the "Facebook" webpage. It worked as expected.
+##### Instagram Icon 
+- When “Instagram Icon ” is left clicked with the mouse, the browser sends the user to the "Instagram" webpage. It worked as expected.
+
+### Register Page
+#### Form Section
+##### Email
+- can add text to the input tag, It works as expected.
+##### Password
+- can add text to the input tag, It works as expected.
+##### Password conformation 
+- can add text to the input tag, It works as expected.
+##### Sign Up 
+- Once the user enters a valid email and a password that contains at least 8 characters a new user is created and they can access the web application
+
+### Login Page
+#### Form Section
+##### Email
+- can add text to the input tag, It works as expected.
+##### Password
+- can add text to the input tag, It works as expected.
+##### Sign In
+- Once the user enters their email and password they registered with they can access the web application.
+
+### Reservations Page
+#### Form Section
+##### Title
+- can add text to the input tag, It works as expected.
+##### Number og guests
+- can add text to the input tag, It works as expected.
+##### Date
+- can add text to the input tag, It works as expected.
+##### Time
+- can add text to the input tag, It works as expected.
+##### Comments
+- can add text to the input tag, It works as expected.
+
+The inofrmation that is submited is posted to a Heroku Postgress database. It Submits as expected. 
+
+### My Bookings Page
+#### Bookings
+##### Edit Booking
+- When “Edit” is left clicked with the mouse, the user is able to edit their booking. It worked as expected.
+##### Delete Booking
+- When “Delete” is left clicked with the mouse, the user is able to cancel their booking. It worked as expected.
+##### Create a new Booking
+- When “Create a new Booking” is left clicked with the mouse, the user is able to create a new booking. It worked as expected.
+
+### Logout Page
+- When “Sign Out ” is left clicked with the mouse, the user is logged out of the web application. It worked as expected.
+
+<a name="bugs"></a>
+
+# 5.	Bugs
+
+[Go to the top](#table-of-contents)
+
+1. Django [Errno 111] connection refused error when running the server
+<br>
+
+- Fix: Database details missing from settings.py file, received assistance from my Code Institute Mentor and [StackOverflow](https://stackoverflow.com/questions/47611699/django-send-mail-errno-111-connection-refused) to resolve the issue.
+
+2. Django.db.utils.Intrety Error: could not create unique index "restaurant-reservations_title_key"
+<br>
+
+Detail: Key(title)=(1) is duplicated
+<br>
+
+- Fix: The Heroku Postgres Database needed to be reset with the help of Code Institute Tutor Support
+
+3. Once a user is registered they can access the web application, when the user then logs out there is a problem where the registered user cannot log back with with the credentails they used to register.
+<br>
+Bug not fixed
+
+4. The Date format on the reservations page only accepts yyyy-mm-dd format wich can cause confussion for users that are more familiar with dd/mm/yyyy.
+<br>
+Bug not fixed
+
+5. Deployed django app to heroku missing CSS / static files
+- Fix: Space missing in the setting.py [StackOverflow](https://stackoverflow.com/questions/38987993/deployed-django-app-to-heroku-missing-css-static-files)
 
 

@@ -2,9 +2,8 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
-
-
 STATUS = ((0, "Draft"), (1, "Published"))
+
 
 class Reservations(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, default=1)

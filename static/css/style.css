@@ -14,7 +14,7 @@
 }
 
 .nav-link {
-    font-size: 16ps;
+    font-size: 16px;
     margin: 3px;
     color: #fff!important;
     font-weight: 500;
@@ -22,7 +22,7 @@
 
 .navbar-nav {
     text-align: right;
-    margin-right: 20;
+    margin-right: 10px;
 }
 
 .menu-bar .navbar-toggler {
@@ -353,7 +353,6 @@ ul.social-network li {
     height: 900px;
     background-image: url("../images/reserve.jpg");  
     background-size: cover;
-    display: display;
     justify-content: center;
     align-items: center;
     text-align: center;

@@ -4,7 +4,6 @@
 
 <div id="reservations" class="testbox">
         <form action="" method="POST">
-          <a href="{% url 'bookings' %}" type="button" class="btn btn-warning">Go Back</a>
           {% csrf_token %}
 
           {{ form.as_p }}

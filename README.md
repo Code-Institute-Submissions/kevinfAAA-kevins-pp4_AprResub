@@ -1,108 +1,200 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Kevs Place
 
-Welcome kevinfAAA,
+## Description: Code Institute Student Project Portfolio 4: Full-Stack Toolkit  
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+A restaurant website capable of reserving a table, canceling a reservations and viewing your resrvations.
+<br>
+It showcases my ability to use the Python Django Framework.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+A live program can be found [here](https://kevinspp4.herokuapp.com/).
 
-## Gitpod Reminders
+![Indeed Web Scraping Program](static/images/AmIResponsive.JPG)
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+# Table of Contents
+- [1. Introduction](#introduction)
+- [2. How to use](#How-to-use)
+- [3. Data Model and Technologies](#Data-Model-and-Technologies)
+- [4. Testing](#testing)
+- [5. Bugs](#bugs)
+- [6. Future Updates](#future-updates)
+- [7. Contribution Links](#contribution-links)
+- [8. Deployment](#deployment)
 
-`python3 -m http.server`
 
-A blue button should appear to click: _Make Public_,
+<a name="introduction"></a>
 
-Another blue button should appear to click: _Open Browser_.
+# 1. Introduction
+[Go to the top](#table-of-contents)
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+This is my first web application using the Django Framework. It is part of my project portfolio required in the Full-Stack Software Development Diploma I am currently undertaking. Django is a Python-based free and open-source web framework that follows the model–template–views architectural pattern.
+<br>
+The aim of the project is to create a restaurant reservations website.
+The website should allow the user to book one or more guests into the restaurant at a time and date of the users choice.
+The site owner will have a ability to take online bookings for their restaurant.
+<br>
 
-A blue button should appear to click: _Make Public_,
+The main features consist of:
+1. The ability to register on the website to access the reservations page.
+2. The ability to login to the website once registered to view/make or cancel the users booking.
+3. The ability to logout from the website once the user has viewed/made or canceled their booking.
+4. The ability to view the menu page, opening times and where the restaurant is located.
 
-Another blue button should appear to click: _Open Browser_.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+## Purpose
 
-To log into the Heroku toolbelt CLI:
+Running a restaurant is a huge task that comes with a never-ending to-do-list. Most operators probably don’t like the idea of adding another assignment but there is one that is very important – a website. According to a [Constant Contact/Single Platform survey](https://localu.org/restaurants-local-search-data/), “75% of consumers surveyed often choose a restaurant to dine at based on search results”.
+<br>
+If a restaurant doesn’t have a website, they’re missing out on a massive audience. Online visibility is huge for restaurants and can ultimately determine whether customers come to at that restaurant or not. Some reasons to have a website for a restaurant are:
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+- Brand Image
+- Convenience
+- Improves Trust and Loyalty
+- Keep Guests Informed
+- Promote Other Services
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+<a name="How-to-use"></a>
 
-------
+# 2. How to use
+[Go to the top](#table-of-contents)
 
-## Release History
+When the user first opens the web application they will be able to view:
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+1. The landing page
+2. The menu page
+3. The login page
+4. The register page
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+The user will need to create an account to view:
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+1. The reservations page
+2. The booking page
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+## Walk Through
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+The following walkthrough with images shows the web application functionality:
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+### Unregistered Users
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+#### Landing Page
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+![Landing page](static/images/Image1.JPG)
+![Landing page footer](static/images/Image2.JPG)
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+When the user first opens the web application they are greeted with a landing image and and the navbar.
+<br>
+The landing image indicates to the user that they will need to Login/Register to make a reservation.
+<br>
+The navbar allows the user to visit our menu page and also provides direction the both the login and register pages.
+<br>
+The footer informs the user of:
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+1. The location of the restaurant (As this is a college project, the restaurant location is made up. the [Show on Google Maps](https://www.google.ie/maps/place/Dublin,+D02+K303/@53.3414179,-6.2543296,17z/data=!4m5!3m4!1s0x48670e90ae6b6a7d:0x83dec26aaf2acc2b!8m2!3d53.3408889!4d-6.2524652) link is actaully the location of the National Gallery of Ireland).
+2. Contact Details.
+3. Opening Hours.
+4. Links to Social media pages (As this is a college project, the social media links [Facebook](https://www.facebook.com/) [Instagram](https://www.instagram.com/) direct the user to the social media sign up pages).
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+#### Register
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+![Register page](static/images/Image3.JPG)
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+The register page is a form that requests the following details:
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+1. E-mail address
+2. Password
+3. Password confirmation
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+Onces the user provides these details, they can then access the web application and view/make or cancel a reservation.
+<br>
+If a user accesses the register page that is already registered there a link to the sign in page.
 
-------
+#### Login
 
-## FAQ about the uptime script
+![Login page](static/images/Image4.JPG)
 
-**Why have you added this script?**
+The login page is a form that requests the following details:
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+1. E-mail address
+2. Password
 
-**How will this affect me?**
+Onces the user provides these details, they can then access the web application and view/make or cancel a reservation.
+<br>
+If the user accesses the login page that has not already registered there is a link to the register page.
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+#### Menu
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+![Menu page](static/images/Image5.JPG)
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+The menu page contains the menu available at the restaurant.
 
-**So….?**
+### Registered Users
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+![Landing page](static/images/Image6.JPG)
+![Landing page footer](static/images/Image2.JPG)
 
-**Can I opt out?**
+#### Landing Page
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+When the user registers they are greeted with a similar landing image and and the navbar with a few additional changes.
+<br>
+The landing image indicates to the user that they can reserve a table if they wish
+<br>
+The navbar allows the user to visit our menu page and also the reservation page and view mybooking page
+<br>
+The footer is unchanged from the unregistered view
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+#### Reservations
 
-**Anything more?**
+![Landing page](static/images/Image7.JPG)
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+The Reservations page is a form that requests the following details:
 
----
+1. Title
+2. Number of Guests
+3. Date
+4. Time
+5. Comments
 
-Happy coding!
+Onces the user provides these details, they can reserve a table on a particalar date at a perticalar time.
+<br>
+Once the user submits the form they will be redirected to the my bookings page.
+
+#### My Bookings
+
+![Landing page](static/images/Image8.JPG)
+
+The My Bookings page shows the users bookings.
+<br>
+If there are no bookings made it will say "No Reservations made"
+<br>
+If there is a booking the user has the ability to edit or delete an existing booking and create a new booking if they wish.
+
+##### Edit
+
+The edit function on the My Booking page when clicked allows the user to edit there existing bookings on the reservations page.
+
+##### Delete
+
+![Delete booking page](static/images/Image9.JPG)
+
+The delete function on the My Booking page allows the user to cancel their booking, once clicked the user will be asked "Are you sure you want to cancel this reservation" The title of the booking is also provided.
+<br>
+Their is also a "Go Back" link if the user changes their mind or clicked delete by mistake which brings the user back to the My Bookings page.
+
+##### Create a new Booking
+
+The create a new booking function allows the user to create a new booking by directing the the user to the reservations page once clicked on.
+
+#### Logout
+
+![Logout page](static/images/Image10.JPG)
+
+The logout page allows the user to logout. 
+
+# 3. Data Model and Technologies
+[Go to the top](#table-of-contents)
+
+
+
+
+
+
+

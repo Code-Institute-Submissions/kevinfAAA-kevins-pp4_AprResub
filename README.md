@@ -6,7 +6,7 @@ A restaurant website capable of reserving a table, canceling a reservations and 
 <br>
 It showcases my ability to use the Python Django Framework.
 
-A live program can be found [here](https://kevinspp4.herokuapp.com/).
+The deployed web application can be found [here](https://kevinspp4.herokuapp.com/).
 
 ![Kevs Place](static/images/AmIResponsive.JPG)
 

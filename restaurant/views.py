@@ -22,6 +22,7 @@ def reserved(request):
 
 class BookingsList(ListView):
     model = Reservations
+    print(model)
     context_object_name = 'bookings'
     template_name = 'restaurant/bookings_list.html'
 

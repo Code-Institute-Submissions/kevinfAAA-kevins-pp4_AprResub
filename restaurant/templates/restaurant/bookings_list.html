@@ -15,11 +15,13 @@
                 <th></th>
             </tr>
             {% for reservations in bookings %}
+            {% if reservations.user == request.user %}
             <tr>
                 <td>{{reservations.title}}</td>
                 <td><a type="button" class="btn btn-success" href="{% url 'update' reservations.id %}">Edit</a></td>
                 <td><a type="button" class="btn btn-danger" href="{% url 'delete' reservations.id %}">Delete</a></td>
             </tr>
+            {% endif %}
             {% empty %}
         <h3>No Reservations Made</h3>
             {% endfor %}

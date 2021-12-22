@@ -8,24 +8,23 @@
         <h1>{{request.user}}</h1>
         </div>
         <div class="bookings">
-        <table>
-            <tr>
-                <th>Bookings</th>
-                <th></th>
-                <th></th>
-            </tr>
-            {% for reservations in bookings %}
+            <table>
+                <tr>
+                    <th>Bookings</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                <!-- For loop to show the users reservations, if no reservations "No reservations made" -->
             {% if reservations.user == request.user %}
             <tr>
                 <td>{{reservations.title}}</td>
                 <td><a type="button" class="btn btn-success" href="{% url 'update' reservations.id %}">Edit</a></td>
                 <td><a type="button" class="btn btn-danger" href="{% url 'delete' reservations.id %}">Delete</a></td>
             </tr>
-            {% endif %}
-            {% empty %}
+            {% else %}
         <h3>No Reservations Made</h3>
-            {% endfor %}
-        </table>
+            {% endif %}
+            </table>
         <div>
             <a type="button" class="btn btn-primary" href="{% url 'create' %}">Create a new Booking</a>
         </div>

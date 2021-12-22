@@ -3,6 +3,8 @@ from django.urls import path
 from .views import BookingsList, BookingsDetail, BookingsCreate, BookingsUpdate, DeleteView
 
 
+# URLs
+
 urlpatterns = [  
     path('', views.index, name='home'),
     path('menu/', views.menu, name='menu'),

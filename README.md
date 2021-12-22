@@ -349,15 +349,224 @@ Detail: Key(title)=(1) is duplicated
 
 - Fix: The Heroku Postgres Database needed to be reset with the help of Code Institute Tutor Support
 
-3. Once a user is registered they can access the web application, when the user then logs out there is a problem where the registered user cannot log back with with the credentails they used to register.
+3. Issue with Django-allauth. Once a user is registered they can access the web application, when the user then logs out there is a problem where the registered user cannot log back in with with the credentails they used to register. When the user trys to log back in they "The e-mail address and/or password you specified are not correct" but they are correct. This means that if the user wants to make a booking they have to re-register with new register details. 
 <br>
 Bug not fixed
 
-4. The Date format on the reservations page only accepts yyyy-mm-dd format wich can cause confussion for users that are more familiar with dd/mm/yyyy.
+4. On the My Bookings page I created a For Loop to show the users reservations and if there were no reservations it would say "No reservations made":
+<br>
+`{% for reservations in bookings %}`
+<br>
+                `<tr>`
+<br>
+                    `<td>{{reservations.title}}</td>`
+<br>
+                    `<td><a type="button" class="btn btn-success" href="{% url 'update' reservations.id %}">Edit</a></td>`
+<br>
+                    `<td><a type="button" class="btn btn-danger" href="{% url 'delete' reservations.id %}">Delete</a></td>`
+<br>
+                `</tr>`
+<br>
+                `{% empty %}`
+<br>
+            `<h3>No Reservations Made</h3>`
+<br>
+                `{% endfor %}`
+<br>
+However it seems to return all the reservations. 
+<br>
+<br>
+I've also tried using an If statement and that only returns "No reservations made" even when I have a reservations made:
+<br>
+`{% if reservations.user == request.user %}`
+<br>
+            `<tr>`
+<br>
+                `<td>{{reservations.title}}</td>`
+<br>
+                `<td><a type="button" class="btn btn-success" href="{% url 'update' reservations.id %}">Edit</a></td>`
+<br>
+                `<td><a type="button" class="btn btn-danger" href="{% url 'delete' reservations.id %}">Delete</a></td>`
+<br>
+            `</tr>`
+<br>
+            `{% else %}`
+<br>
+        `<h3>No Reservations Made</h3>`
+<br>
+            `{% endif %}`
+<br>
 <br>
 Bug not fixed
 
-5. Deployed django app to heroku missing CSS / static files
-- Fix: Space missing in the setting.py [StackOverflow](https://stackoverflow.com/questions/38987993/deployed-django-app-to-heroku-missing-css-static-files)
+5. The Date format on the reservations page only accepts yyyy-mm-dd format wich can cause confussion for users that are more familiar with dd/mm/yyyy.
+<br>
+Bug not fixed
+
+6. Deployed django app to heroku missing CSS / static files
+<br>
+Bug not fixed
+
+<a name="future-updates"></a>
+
+# 6. Future Updates
+[Go to the top](#table-of-contents)
+
+1. Fix Bugs
+
+<a name="contribution-links"></a>
+
+# 7.	Contribution Links
+
+[Go to the top](#table-of-contents)
+
+- [Django](https://www.djangoproject.com/)
+
+- [Font Awesome Icons](https://fontawesome.com/v4.7/icons/)
+- [Bootstrap](https://getbootstrap.com/)
+- [Cloudinary](https://cloudinary.com/)
+- [Heroku](https://www.heroku.com/)
+- [Postgresql](https://www.postgresql.org/)
+- [Django-Allauth](https://django-allauth.readthedocs.io/en/latest/overview.html)
+- [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input)
+- [W3schools](https://www.w3schools.com/cssref/pr_text_text-align.asp)
+- [Google fonts](https://fonts.google.com/)
+- [Stack exchange](https://stackexchange.com/)
+- [Stack overflow](https://stackoverflow.com/)
+- [Am I responsive?](http://ami.responsivedesign.is/)
+- [W3C Markup validation](https://validator.w3.org/#validate_by_input)
+- [W3C CSS validation](https://jigsaw.w3.org/css-validator/)
+- [Python Docs](https://www.python.org/)
+- [Python Tutor](http://www.pythontutor.com/visualize.html#mode=edit)
+- [PEP8 online](http://pep8online.com/)
+
+ <a name="deployment"></a>
+
+# 8.	Deployment to Heroku
+
+[Go to the top](#table-of-contents)
+
+
+### 4 Stages
+1. Create the Heroku app
+2. Attach the database
+3. Prepare our environment and settings.py file
+4. Get our static and media files stored on Cloudinary.
+
+## Create the Heroku App
+
+### In Heroku:
+
+#### Step 1
+Create new Heroku App 
+
+#### Step 2
+Add Database to AppResources
+
+#### Step 3
+Copy DATABASE_URL 
+
+## Attach the Database:
+### In gitpod
+
+#### Step 4
+Create new env.py file on top level directory
+
+### In env.py
+
+#### Step 5
+Import os library
+
+#### Step 6
+Set environment variables 
+
+#### Step 7
+Add in secret key 
+
+### In heroku.com
+
+#### Step 8
+Add Secret Key to Config Vars
+
+## Prepare our environment and settings.py file:
+
+### In settings.py
+#### Step 9
+Reference env.py 
+
+#### Step 10
+Remove the insecure secret key and replace - links to the secret key variable on Heroku
+
+#### Step 11
+Replace DATABASES Section(Comment out the old DataBases Section) - links to the DATATBASE_URL variable on Heroku
+
+### In the Terminal
+
+#### Step 12
+Make Migrations
+
+## Get our static and media files stored on Cloudinary:
+
+### In Cloudinary:
+
+#### Step 13
+Copy your CLOUDINARY_URL e.g. API Environment Variable
+
+### In env.py:
+Add Cloudinary URL to env.py - be sure to paste in the correct section of the link
+
+### In Heroku:
+
+#### Step 14
+Add Cloudinary URL to Heroku Config Vars - be sure to paste in the correct section of the link
+
+#### Step 15
+Add DISABLE_COLLECTSTATIC to Heroku Config Vars (temporary step for the moment, must be removed before deployment)
+
+### In settings.py:
+
+#### Step 16
+Add Cloudinary Libraries to installed apps
+
+#### Step 17
+Tell Django to use Cloudinary to store media and static files Place under the Static files Note
+
+#### Step 18
+Link file to the templates directory in Heroku Place under the BASE_DIR line
+
+#### Step 19
+Change the templates directory to TEMPLATES_DIR Place within the TEMPLATES array
+
+#### Step 20
+Add Heroku Hostname to ALLOWED_HOSTS
+
+#### Step 21
+
+### In Gitpod:
+Create 3 new folders on top level directory
+
+#### Step 22
+Create procfile on the top level directory
+
+### In Procfile
+
+#### Step 23
+Add code 
+
+### In the Terminal:
+
+#### Step 24
+Add, Commit and Push 
+
+### In Heroku:
+Deploy Content manually through heroku/
+
+
+
+
+
+
+
+
 
 

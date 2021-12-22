@@ -3,6 +3,8 @@ from django.forms import ModelForm
 from .models import Reservations
 
 
+# reservation form class
+
 class ReservationsForm(ModelForm):
     class Meta:
         model = Reservations

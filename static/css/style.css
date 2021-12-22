@@ -168,7 +168,7 @@ textarea {
 .item input:hover, .item select:hover, .item textarea:hover {
     border: 1px solid transparent;
     box-shadow: 0 0 6px 0 #d6e0f5;
-    color: #d6e0f5;
+    color: #525763;
 }
 
 .item {
@@ -235,6 +235,7 @@ button:hover {
 /*Footer*/
 
 footer {
+    margin-top: auto;
     background: #16222A;
     background: -webkit-linear-gradient(59deg, #3A6073, #16222A);
     background: linear-gradient(59deg, #3A6073, #16222A);

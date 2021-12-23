@@ -15,15 +15,15 @@
                     <th></th>
                 </tr>
                 <!-- For loop to show the users reservations, if no reservations "No reservations made" -->
-            {% if reservations.user == request.user %}
+            {% for reservations in bookings %}
             <tr>
                 <td>{{reservations.title}}</td>
                 <td><a type="button" class="btn btn-success" href="{% url 'update' reservations.id %}">Edit</a></td>
                 <td><a type="button" class="btn btn-danger" href="{% url 'delete' reservations.id %}">Delete</a></td>
             </tr>
-            {% else %}
+            {% empty %}
         <h3>No Reservations Made</h3>
-            {% endif %}
+            {% endfor %}
             </table>
         <div>
             <a type="button" class="btn btn-primary" href="{% url 'create' %}">Create a new Booking</a>

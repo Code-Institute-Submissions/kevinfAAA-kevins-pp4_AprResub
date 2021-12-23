@@ -403,7 +403,7 @@ Bug not fixed
 <br>
 Bug not fixed
 
-6. Deployed django app to heroku missing CSS / static files
+6. Deployed issue, when deploying to heroku the web application fails to pick up the static folders in cloudinary. when running the web application locally there is no issue with the static files. I have used `<link rel="stylesheet" href="https://res.cloudinary.com/dz4qzokh5/raw/upload/v1640102377/static/css/style.f424d33c7c57.css">` to hard code the css to my deployed project but have not been able to do the same the images, not sure hard coding is the correct solution. when running the project locally I remove the hard cooded link and replace it with `<link rel="stylesheet"  href="{% static 'css/style.css' %}">` and all styling and images appear as they should.
 <br>
 Bug not fixed
 

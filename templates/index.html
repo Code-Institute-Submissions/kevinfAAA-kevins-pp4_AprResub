@@ -3,8 +3,8 @@
 {% block content %}
 <div class="container-fluid callout-container">
   <div class="opaque-overlay">&nbsp;</div>
-  <form class="landing">
-    {% csrf_token %}
+  <form method="POST" class="landing">
+      {% csrf_token %}
       <div>
         <h2>Kevs Place</h2>
         <h2>Fine Dining Bistro</h2>
@@ -15,7 +15,7 @@
         <a type="button" class="btn btn-success" href="{% url 'account_login' %}">Login/Register</a>
         {% endif %}
       </div>
-    </form>
+  </form>
 </div>
 
 {% endblock content %}

@@ -4,6 +4,7 @@
 {% if request.user.is_authenticated %}
 <div class="testbox">
     <form class="login" method="POST" action="{% url 'account_login' %}">
+        {% csrf_token %}
         <div class= "banner">
         <h1>{{request.user}}</h1>
         </div>

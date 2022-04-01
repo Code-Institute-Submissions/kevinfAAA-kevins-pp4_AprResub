@@ -219,7 +219,7 @@ button:hover {
     background: #6eb8dd;
 }
 
-@media (max-width: 580px) {
+@media (max-width: 980px) {
     form {
         width: 100%;
     }
@@ -436,5 +436,24 @@ ul.social-network li {
 
 .bookings div{
     padding-top: 30px;
+}
+
+@media only screen and (max-width: 470px) {
+    .bookings {
+        font-size: 30px;
+        padding: 2px;
+    }
+    
+    .bookings td{
+        padding: 2px;
+    }
+    
+    .bookings th{
+        padding-bottom: 5px;
+    }
+    
+    .bookings div{
+        padding-top: 5px;
+    }
 }
 

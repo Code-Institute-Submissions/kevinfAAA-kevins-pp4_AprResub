@@ -19,6 +19,7 @@ The deployed web application can be found [here](https://kevinspp4.herokuapp.com
 - [6. Future Updates](#future-updates)
 - [7. Contribution Links](#contribution-links)
 - [8. Deployment](#deployment)
+- [8. Wireframes](#Wireframes)
 
 
 <a name="introduction"></a>
@@ -561,7 +562,28 @@ Add, Commit and Push
 ### In Heroku:
 Deploy Content manually through heroku/
 
+ <a name="wireframes"></a>
 
+# 8.	Wireframes
+
+[Go to the top](#table-of-contents)
+
+## Landing Page
+![Landing Page](media/wireframes/LandingPage.png)
+## Menu Page
+![Menu Page](media/wireframes/MenuPage.png)
+## Reservations Page
+![Reservations Page](media/wireframes/ReservationsPage.png)
+## My Bookings Page
+![My Bookings Page](media/wireframes/MyBookingsPage.png)
+## iPad Landing and Menu Page
+![iPad Landing and Menu Page](media/wireframes/LandingandMenuPageoniPad.png)
+## iPad Reservations and Bookings Page
+![iPad Reservations and Bookings Page](media/wireframes/RevationsandMyBookingsPageiPad.png)
+## iPhone Landing and Menu Page
+![iPhone Landing and Menu Page](media/wireframes/LandingandMenuPageoniPhone.png)
+## iPhone Reservations and Bookings Page
+![iPhone Reservations and Bookings Page](media/wireframes/RevationsandMyBookingsPageiPhone.png)
 
 
 

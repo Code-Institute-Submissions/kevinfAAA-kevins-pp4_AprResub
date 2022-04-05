@@ -21,18 +21,18 @@ def reserved(request):
 
 # booking list class
 
+
 class BookingsList(ListView):
     model = Reservations
-    context_object_name = 'bookings'
     template_name = 'restaurant/bookings_list.html'
 
-
-def get_context_data(self, **kwargs):
-    context = super().get_context_data(**kwargs)
-    context['bookings'] = context['bookings'].filter(user=self.request.user)
-    return context
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['bookings'] = Reservations.objects.filter(user=self.request.user)
+        return context
 
 # booking detail class
+
 
 class BookingsDetail(DetailView):
     model = Reservations
@@ -41,18 +41,19 @@ class BookingsDetail(DetailView):
 
 # create booking class
 
+
 class BookingsCreate(CreateView):
     model = Reservations
     template_name = 'restaurant/bookings_form.html'
     fields = ('title', 'number_of_guests', 'date', 'time', 'comments')
     success_url = reverse_lazy('bookings')
 
-
-def form_valid(self, form):
-    form.instance.user = self.request.user
-    return super(BookingsCreate, self).form_valid(form)
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super(BookingsCreate, self).form_valid(form)
 
 # update bookings class
+
 
 class BookingsUpdate(UpdateView):
     model = Reservations
@@ -62,9 +63,9 @@ class BookingsUpdate(UpdateView):
 
 # delete bookings class
 
+
 class DeleteView(DeleteView):
     model = Reservations
     template_name = 'restaurant/bookings_delete.html'
     context_object_name = 'booking'
     success_url = reverse_lazy('bookings')
-

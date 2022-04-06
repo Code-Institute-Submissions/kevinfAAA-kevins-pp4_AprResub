@@ -6,6 +6,7 @@ STATUS = ((0, "Draft"), (1, "Published"))
 
 # Reservations model class
 
+
 class Reservations(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
     title = models.CharField(max_length=200, unique=True, default="")

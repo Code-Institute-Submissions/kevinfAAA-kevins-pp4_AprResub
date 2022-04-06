@@ -8,7 +8,7 @@ It showcases my ability to use the Python Django Framework.
 
 The deployed web application can be found [here](https://kevinspp4.herokuapp.com/).
 
-![Kevs Place](static/images/AmIResponsive.JPG)
+![Kevs Place](media/images/AmIResponsive.JPG)
 
 # Table of Contents
 - [1. Introduction](#introduction)
@@ -19,7 +19,8 @@ The deployed web application can be found [here](https://kevinspp4.herokuapp.com
 - [6. Future Updates](#future-updates)
 - [7. Contribution Links](#contribution-links)
 - [8. Deployment](#deployment)
-- [8. Wireframes](#Wireframes)
+- [9. Design Phase](#design-phase)
+- [10. Wireframes](#Wireframes)
 
 
 <a name="introduction"></a>
@@ -78,8 +79,8 @@ The following walkthrough with images shows the web application functionality:
 
 #### Landing Page
 
-![Landing page](static/images/Image1.JPG)
-![Landing page footer](static/images/Image2.JPG)
+![Landing page](media/images/Image1.JPG)
+![Landing page footer](media/images/Image2.JPG)
 
 When the user first opens the web application they are greeted with a landing image and and the navbar.
 <br>
@@ -96,7 +97,7 @@ The footer informs the user of:
 
 #### Register
 
-![Register page](static/images/Image3.JPG)
+![Register page](media/images/Image3.JPG)
 
 The register page is a form that requests the following details:
 
@@ -110,7 +111,7 @@ If a user accesses the register page that is already registered there a link to 
 
 #### Login
 
-![Login page](static/images/Image4.JPG)
+![Login page](media/images/Image4.JPG)
 
 The login page is a form that requests the following details:
 
@@ -123,14 +124,14 @@ If the user accesses the login page that has not already registered there is a l
 
 #### Menu
 
-![Menu page](static/images/Image5.JPG)
+![Menu page](media/images/Image5.JPG)
 
 The menu page contains the menu available at the restaurant.
 
 ### Registered Users
 
-![Landing page](static/images/Image6.JPG)
-![Landing page footer](static/images/Image2.JPG)
+![Landing page](media/images/Image6.JPG)
+![Landing page footer](media/images/Image2.JPG)
 
 #### Landing Page
 
@@ -144,7 +145,7 @@ The footer is unchanged from the unregistered view
 
 #### Reservations
 
-![Landing page](static/images/Image7.JPG)
+![Landing page](media/images/Image7.JPG)
 
 The Reservations page is a form that requests the following details:
 
@@ -160,7 +161,7 @@ Once the user submits the form they will be redirected to the my bookings page.
 
 #### My Bookings
 
-![Landing page](static/images/Image8.JPG)
+![Landing page](media/images/Image8.JPG)
 
 The My Bookings page shows the users bookings.
 <br>
@@ -174,7 +175,7 @@ The edit function on the My Booking page when clicked allows the user to edit th
 
 ##### Delete
 
-![Delete booking page](static/images/Image9.JPG)
+![Delete booking page](media/images/Image9.JPG)
 
 The delete function on the My Booking page allows the user to cancel their booking, once clicked the user will be asked "Are you sure you want to cancel this reservation" The title of the booking is also provided.
 <br>
@@ -186,7 +187,7 @@ The create a new booking function allows the user to create a new booking by dir
 
 #### Logout
 
-![Logout page](static/images/Image10.JPG)
+![Logout page](media/images/Image10.JPG)
 
 The logout page allows the user to logout. 
 
@@ -195,7 +196,7 @@ The logout page allows the user to logout.
 
 ## Django
 
-![Django Framework Diagram](static/images/Image11.jpg)
+![Django Framework Diagram](media/images/Image11.jpg)
 
 This web application was created using the Django Framework.
 <br>
@@ -241,7 +242,7 @@ I used [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_inpu
 
 I used the [PEP8 online](http://pep8online.com/) validator to check my python code for errors.
 
-![Kevs Place](static/images/AmIResponsive.JPG)
+![Kevs Place](media/images/AmIResponsive.JPG)
 
 I used [Am I Responsive](http://ami.responsivedesign.is/) to view how my website is displayed on different media viewports. The results suggust that the webisite is responsive for the follwoing devices:
 - Widescreen desktop.
@@ -352,7 +353,7 @@ Detail: Key(title)=(1) is duplicated
 
 3. Issue with Django-allauth. Once a user is registered they can access the web application, when the user then logs out there is a problem where the registered user cannot log back in with with the credentails they used to register. When the user trys to log back in they "The e-mail address and/or password you specified are not correct" but they are correct. This means that if the user wants to make a booking they have to re-register with new register details. 
 <br>
-Bug not fixed
+Fix: Inunstalled Django 4.0 and installed Django==3.2 gunicorn which resolved this issue
 
 4. On the My Bookings page I created a For Loop to show the users reservations and if there were no reservations it would say "No reservations made":
 <br>
@@ -398,7 +399,7 @@ I've also tried using an If statement and that only returns "No reservations mad
             `{% endif %}`
 <br>
 <br>
-Bug not fixed
+Fix: resolved through update to the BookingsList class view which then did not require an if statment in the bookings_list html file, the for loop works as expected and only the users bookings can be viewed instead off all bookings.
 
 5. The Date format on the reservations page only accepts yyyy-mm-dd format wich can cause confussion for users that are more familiar with dd/mm/yyyy.
 <br>
@@ -406,7 +407,7 @@ Bug not fixed
 
 6. Deployed issue, when deploying to heroku the web application fails to pick up the static folders in cloudinary. when running the web application locally there is no issue with the static files. I have used `<link rel="stylesheet" href="https://res.cloudinary.com/dz4qzokh5/raw/upload/v1640102377/static/css/style.f424d33c7c57.css">` to hard code the css to my deployed project but have not been able to do the same the images, not sure hard coding is the correct solution. when running the project locally I remove the hard cooded link and replace it with `<link rel="stylesheet"  href="{% static 'css/style.css' %}">` and all styling and images appear as they should.
 <br>
-Bug not fixed
+Fix: I updated the urls for the images and removed `<link rel="stylesheet" href="https://res.cloudinary.com/dz4qzokh5/raw/upload/v1640102377/static/css/style.f424d33c7c57.css"> from the base html file and this resolved the issue, application now deploys as expected. 
 
 <a name="future-updates"></a>
 
@@ -562,9 +563,51 @@ Add, Commit and Push
 ### In Heroku:
 Deploy Content manually through heroku/
 
+ <a name="design-phase"></a>
+
+# 9.	Design Phase
+
+[Go to the top](#table-of-contents)
+
+The design phase helped me set and end goal and provided clarity at an early stage of what I wanted the appliication to be. The following steps outlines how I designed my web application.
+
+## Step 1 Models
+
+Before I created my models I used excel to design a model I beleieved would best suit me application
+
+![Reservations Model](media/images/reservationmodel.JPG)
+
+Once I was happy with the design I incorporated it into project.
+
+## Step 2 Functionality
+
+Once my models were created I then had to think what functionality I wanted, I decided to make a list of what was required:
+
+1. The user needed to be able to make a booking.
+2. The user needed to be able to edit there booking.
+3. The user needed to be able to delete there booking.
+
+## Step 3 Front End Design
+
+Once I had my models and knew what functionality I wanted to include, I decided that my next step was to design my front end and user experience. My initial landing page wireframe was a little different to what I finally decided on: 
+
+![Initial Landing Page](media/wireframes/InitialLandingPage.png)
+
+The intial landing page looks quite different to the final landing page which can be seen in the wireframes chapther below. The initial landing page had a landing image that took up a third of the page, while a details section and map section took up another third leaving the remaining third comprised of the navigation bar and footer. When looking at this I felt that their was to much going on and that the user should be more focused, so I decided to create a div in the middle of the image and add a sign up button which I felt was more inviting to the user, I also made the landing image bigger and added the details section and map link to the footer so the user would be more focused on signing up. The final landing page can be seen in the wireframes chapther below.
+<br>
+The menu page I decided to have an opaque dark image with bright text that popped for the user.
+<br>
+For the reservations form I decided that the form should be centered and clear cut.
+<br>
+For the my bookings page I wanted to design a page that enabled the user to use the applications CRUD functionality. So I felt that when designing it, first it should be simple to use and two, the user should understand immediately how to use it. 
+The design I implemented I beleive does this as the buttons to edit and delete are in line with the reservatiosn title so it's clear to the user what booking he/she is about to edit or delete.  
+
+![Booking Table](media/images/bookingstable.JPG)
+
+
  <a name="wireframes"></a>
 
-# 8.	Wireframes
+# 10.	Wireframes
 
 [Go to the top](#table-of-contents)
 
